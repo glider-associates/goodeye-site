@@ -1,0 +1,144 @@
+---
+const newsItems = [
+  {
+    date: "2025.10.06",
+    category: "お知らせ",
+    title:
+      "【渋谷ストリーム１階】囲炉裏料理と日本のお酒を楽しむ立ち飲み酒場「ONDO（オンド）」オープン！",
+  },
+  {
+    date: "2025.09.01",
+    category: "お知らせ",
+    title: "RINN（リン）グランドオープンのお知らせ",
+  },
+  {
+    date: "2025.07.15",
+    category: "メディア",
+    title: "雑誌「東京カレンダー」にKAMERAが掲載されました",
+  },
+  {
+    date: "2025.05.20",
+    category: "イベント",
+    title: "渋谷フードフェスティバル 2025 出店のお知らせ",
+  },
+];
+---
+
+<section class="news" id="news">
+  <div class="container">
+    <div class="news-header fade-in">
+      <div class="news-title-area">
+        <span class="section-label" style="color: var(--color-accent);">Latest</span>
+        <h2 class="section-title-en">News</h2>
+        <p class="section-title-ja">お知らせ</p>
+      </div>
+    </div>
+
+    <div class="news-list fade-in">
+      {
+        newsItems.map((item) => (
+          <a href="#" class="news-item">
+            <time class="news-date">{item.date}</time>
+            <span class="news-category">{item.category}</span>
+            <p class="news-title">{item.title}</p>
+            <span class="news-arrow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </span>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .news {
+    background: var(--color-bg-light);
+    padding: var(--section-padding) 0;
+  }
+
+  .news-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+  }
+
+  .news-list {
+    border-top: 1px solid var(--color-border-dark);
+  }
+
+  .news-item {
+    display: grid;
+    grid-template-columns: 100px 80px 1fr 30px;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--color-border-dark);
+    transition: all 0.3s ease;
+  }
+
+  .news-item:hover {
+    padding-left: 1rem;
+    background: rgba(0, 0, 0, 0.02);
+  }
+
+  .news-date {
+    font-family: var(--font-en);
+    font-size: 0.8rem;
+    color: var(--color-text-gray);
+    letter-spacing: 0.05em;
+  }
+
+  .news-category {
+    font-size: 0.65rem;
+    padding: 3px 10px;
+    border: 1px solid var(--color-border-dark);
+    color: var(--color-text-gray);
+    text-align: center;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+
+  .news-title {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    letter-spacing: 0.03em;
+  }
+
+  .news-arrow {
+    color: var(--color-text-gray);
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: all 0.3s var(--ease-out-expo);
+  }
+
+  .news-item:hover .news-arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  @media (max-width: 768px) {
+    .news-item {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+      padding: 1.2rem 0;
+    }
+
+    .news-date {
+      font-size: 0.75rem;
+    }
+
+    .news-category {
+      width: fit-content;
+    }
+
+    .news-arrow {
+      display: none;
+    }
+  }
+</style>

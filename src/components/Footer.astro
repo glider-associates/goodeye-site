@@ -1,0 +1,158 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="/images/logo/good-eye_logo_B.png" alt="good-eye" class="footer-logo-img" />
+        <p class="footer-address">
+          〒150-0031<br />
+          東京都渋谷区桜丘町29-26 2F
+        </p>
+      </div>
+
+      <div class="footer-nav">
+        <div class="footer-nav-group">
+          <h4 class="footer-nav-title">Business</h4>
+          <ul>
+            <li><a href="#business">コンサルティング事業</a></li>
+            <li><a href="#business">飲食事業</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-group">
+          <h4 class="footer-nav-title">Restaurants</h4>
+          <ul>
+            <li><a href="/restaurants/kamera">KAMERA</a></li>
+            <li><a href="#restaurants">テンキ</a></li>
+            <li><a href="#restaurants">RINN</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-group">
+          <h4 class="footer-nav-title">Information</h4>
+          <ul>
+            <li><a href="/recruit">採用情報</a></li>
+            <li><a href="#news">ニュース</a></li>
+            <li><a href="#company">会社概要</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">
+        &copy; {currentYear} good-eye Inc. All rights reserved.
+      </p>
+      <a href="#" class="footer-privacy">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--color-bg-dark);
+    border-top: 1px solid var(--color-border);
+    padding: clamp(3rem, 6vw, 5rem) 0 2rem;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    padding-bottom: clamp(2rem, 4vw, 3rem);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .footer-logo-img {
+    height: 30px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-address {
+    font-size: 0.75rem;
+    line-height: 1.8;
+    color: var(--color-text-light-gray);
+    font-weight: 300;
+  }
+
+  .footer-nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .footer-nav-title {
+    font-family: var(--font-en);
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 1.2rem;
+  }
+
+  .footer-nav-group ul li {
+    margin-bottom: 0.6rem;
+  }
+
+  .footer-nav-group ul li a {
+    font-size: 0.75rem;
+    color: var(--color-text-light-gray);
+    font-weight: 300;
+    transition: color 0.3s ease;
+    letter-spacing: 0.03em;
+  }
+
+  .footer-nav-group ul li a:hover {
+    color: var(--color-white);
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+  }
+
+  .footer-copy {
+    font-family: var(--font-en);
+    font-size: 0.65rem;
+    color: var(--color-text-light-gray);
+    letter-spacing: 0.05em;
+  }
+
+  .footer-privacy {
+    font-family: var(--font-en);
+    font-size: 0.65rem;
+    color: var(--color-text-light-gray);
+    letter-spacing: 0.05em;
+    transition: color 0.3s ease;
+  }
+
+  .footer-privacy:hover {
+    color: var(--color-white);
+  }
+
+  @media (max-width: 768px) {
+    .footer-top {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .footer-nav {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+    }
+  }
+</style>

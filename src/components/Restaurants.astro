@@ -1,0 +1,304 @@
+---
+const restaurants = [
+  {
+    name: "KAMERA",
+    nameJa: "カメラ",
+    desc: "渋谷・百軒店の焼売×お茶ハイ専門ネオ酒場。山形豚の熟成焼売や子羊と黒米の焼売など、フレンチの熟成技法で仕上げた無添加の焼売と、中国茶の専門家が監修した10種以上のお茶ハイを、青いネオンが灯る立ち飲みカウンターで。",
+    images: [
+      "/images/restaurants/kamera/kamera-01.jpg",
+      "/images/restaurants/kamera/kamera-02.jpg",
+      "/images/restaurants/kamera/kamera-03.jpg",
+    ],
+    logo: "/images/logos/kamera/kamera-logo.png",
+    logoStyle: "invert",
+    instagram: "https://www.instagram.com/kamera_shibuya/",
+    page: "/restaurants/kamera",
+  },
+  {
+    name: "テンキ",
+    nameJa: "tenki",
+    desc: "渋谷・桜丘町の隠れ家で味わう、天ぷらと白ワインのマリアージュ。ビブグルマン経歴のシェフがフレンチの技法で仕上げる創作天ぷらと、約300種のナチュラルワイン。大谷石とヨーロピアンスタイルが融合した、看板のないビストロ空間。",
+    images: [
+      "/images/restaurants/tenki/tenki-01.jpg",
+      "/images/restaurants/tenki/tenki-02.jpg",
+      "/images/restaurants/tenki/tenki-03.jpg",
+    ],
+    logo: "/images/logos/tenki/tenki-mark.png",
+    logoStyle: "circle",
+    instagram: "https://www.instagram.com/tenki_shibuya/",
+    page: "",
+  },
+  {
+    name: "RINN",
+    nameJa: "リン",
+    desc: "フランス製ロティサリーマシンで焼き上げるチキンと、全国から集めた50種以上のクラフト焼酎。「輪・音・回転・年輪」——火を囲んで人が一体になる、渋谷・神泉の新しい居酒屋のカタチ。",
+    images: [
+      "/images/restaurants/rinn/rinn-01.jpg",
+      "/images/restaurants/rinn/rinn-02.jpg",
+      "/images/restaurants/rinn/rinn-03.jpg",
+    ],
+    logo: "/images/logos/rinn/rinn-logo-white.png",
+    logoStyle: "invert",
+    instagram: "https://www.instagram.com/rinn__shibuya/",
+    page: "",
+  },
+];
+---
+
+<section class="restaurants" id="restaurants">
+  <div class="restaurants-header fade-in">
+    <div class="container">
+      <span class="section-label" style="color: var(--color-accent);">Our Restaurants</span>
+      <h2 class="section-title-en" style="color: var(--color-white);">Restaurants</h2>
+      <p class="section-title-ja" style="color: var(--color-text-light-gray);">店舗一覧</p>
+    </div>
+  </div>
+
+  {
+    restaurants.map((restaurant, index) => (
+      <div class={`restaurant-item ${index % 2 !== 0 ? "reverse" : ""}`}>
+        <div class="restaurant-images fade-in">
+          <div class="image-main">
+            <img src={restaurant.images[0]} alt={restaurant.name} loading="lazy" />
+          </div>
+          <div class="image-sub-grid">
+            <div class="image-sub">
+              <img src={restaurant.images[1]} alt={restaurant.name} loading="lazy" />
+            </div>
+            <div class="image-sub">
+              <img src={restaurant.images[2]} alt={restaurant.name} loading="lazy" />
+            </div>
+          </div>
+        </div>
+
+        <div class="restaurant-info fade-in">
+          <div class={`restaurant-logo ${restaurant.logoStyle === "circle" ? "logo-circle" : "logo-invert"}`}>
+            <img src={restaurant.logo} alt={restaurant.name} />
+          </div>
+          <h3 class="restaurant-name">{restaurant.name}</h3>
+          <p class="restaurant-desc">{restaurant.desc}</p>
+          <div class="restaurant-links">
+            <a href={restaurant.instagram} target="_blank" rel="noopener" class="restaurant-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <circle cx="12" cy="12" r="5" />
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+              </svg>
+              <span>Instagram</span>
+            </a>
+            {restaurant.page && (
+              <a href={restaurant.page} class="restaurant-page-link">
+                <span>View More</span>
+                <span class="restaurant-page-arrow"></span>
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+    ))
+  }
+</section>
+
+<style>
+  .restaurants {
+    background: var(--color-bg-dark);
+    padding: var(--section-padding) 0;
+  }
+
+  .restaurants-header {
+    margin-bottom: clamp(3rem, 6vw, 5rem);
+  }
+
+  .restaurant-item {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 0;
+    min-height: 80vh;
+    align-items: center;
+  }
+
+  .restaurant-item.reverse {
+    grid-template-columns: 1fr 1.2fr;
+  }
+
+  .restaurant-item.reverse .restaurant-images {
+    order: 2;
+  }
+
+  .restaurant-item.reverse .restaurant-info {
+    order: 1;
+  }
+
+  .restaurant-images {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4px;
+    height: 70vh;
+    overflow: hidden;
+  }
+
+  .image-main {
+    overflow: hidden;
+  }
+
+  .image-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s var(--ease-out-expo);
+  }
+
+  .restaurant-item:hover .image-main img {
+    transform: scale(1.03);
+  }
+
+  .image-sub-grid {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 4px;
+  }
+
+  .image-sub {
+    overflow: hidden;
+  }
+
+  .image-sub img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .restaurant-info {
+    padding: clamp(2rem, 5vw, 5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .restaurant-logo {
+    margin-bottom: 2rem;
+  }
+
+  .restaurant-logo.logo-invert img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+  }
+
+  .restaurant-logo.logo-circle img {
+    height: 80px;
+    width: 80px;
+    object-fit: contain;
+  }
+
+  .restaurant-name {
+    font-family: var(--font-en);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 300;
+    color: var(--color-white);
+    letter-spacing: 0.08em;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+  }
+
+  .restaurant-desc {
+    font-size: 0.85rem;
+    line-height: 2;
+    color: var(--color-text-light-gray);
+    font-weight: 300;
+    margin-bottom: 2rem;
+    max-width: 400px;
+  }
+
+  .restaurant-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .restaurant-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-white);
+    font-family: var(--font-en);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+  }
+
+  .restaurant-link:hover {
+    opacity: 1;
+    color: var(--color-accent);
+  }
+
+  .restaurant-page-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-white);
+    font-family: var(--font-en);
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+  }
+
+  .restaurant-page-link:hover {
+    opacity: 1;
+    color: var(--color-accent);
+  }
+
+  .restaurant-page-arrow {
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    background: currentColor;
+    position: relative;
+    transition: width 0.3s var(--ease-out-expo);
+  }
+
+  .restaurant-page-arrow::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -3px;
+    width: 7px;
+    height: 7px;
+    border-right: 1px solid currentColor;
+    border-top: 1px solid currentColor;
+    transform: rotate(45deg);
+  }
+
+  .restaurant-page-link:hover .restaurant-page-arrow {
+    width: 28px;
+  }
+
+  @media (max-width: 768px) {
+    .restaurant-item,
+    .restaurant-item.reverse {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+
+    .restaurant-item.reverse .restaurant-images {
+      order: 0;
+    }
+
+    .restaurant-item.reverse .restaurant-info {
+      order: 0;
+    }
+
+    .restaurant-images {
+      height: 50vh;
+    }
+
+    .restaurant-info {
+      padding: 2rem var(--container-padding);
+    }
+  }
+</style>

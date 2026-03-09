@@ -1,0 +1,244 @@
+---
+const navItems = [
+  { label: "Message", href: "#message" },
+  { label: "Culture", href: "#culture" },
+  { label: "People", href: "#people" },
+  { label: "Top Message", href: "#ceo-message" },
+  { label: "FAQ", href: "#faq" },
+  { label: "募集情報", href: "#positions" },
+];
+---
+
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="/" class="header-logo">
+      <img src="/images/logo/good-eye_logo_B.png" alt="good-eye" class="logo-img" />
+    </a>
+
+    <nav class="header-nav" id="nav">
+      <ul class="nav-list">
+        {
+          navItems.map((item) => (
+            <li class="nav-item">
+              <a href={item.href} class="nav-link">
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+        <li class="nav-item">
+          <a href="/" class="nav-link nav-link-back">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+            Top
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 0 var(--container-padding);
+    transition: all 0.5s var(--ease-out-expo);
+  }
+
+  .header.is-scrolled {
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(12px);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--header-height);
+    max-width: var(--container-width);
+    margin: 0 auto;
+  }
+
+  .header-logo {
+    z-index: 1001;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+
+  .logo-img {
+    height: 36px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    transition: opacity 0.3s ease;
+  }
+
+  .logo-img:hover {
+    opacity: 0.8;
+  }
+
+  .nav-list {
+    display: flex;
+    gap: 1.8rem;
+    align-items: center;
+  }
+
+  .nav-link {
+    font-family: var(--font-en);
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-white);
+    position: relative;
+    padding: 4px 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--color-accent);
+    transition: width 0.4s var(--ease-out-expo);
+  }
+
+  .nav-link:hover {
+    opacity: 0.8;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  .nav-link-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    opacity: 0.6;
+    border-left: 1px solid var(--color-border);
+    padding-left: 1.8rem;
+    margin-left: 0.2rem;
+  }
+
+  .nav-link-back:hover {
+    opacity: 1;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
+  }
+
+  .hamburger-line {
+    display: block;
+    width: 28px;
+    height: 1px;
+    background: var(--color-white);
+    transition: all 0.4s var(--ease-out-expo);
+    transform-origin: center;
+  }
+
+  .hamburger.is-active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger.is-active .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.is-active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  @media (max-width: 768px) {
+    .hamburger {
+      display: flex;
+    }
+
+    .header-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      height: 100dvh;
+      background: rgba(10, 10, 10, 0.98);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.5s var(--ease-out-expo);
+    }
+
+    .header-nav.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .nav-list {
+      flex-direction: column;
+      align-items: center;
+      gap: 2.2rem;
+    }
+
+    .nav-link {
+      font-size: 0.95rem;
+      letter-spacing: 0.18em;
+    }
+
+    .nav-link-back {
+      border-left: none;
+      padding-left: 0;
+      margin-left: 0;
+      margin-top: 0.5rem;
+    }
+  }
+</style>
+
+<script>
+  const header = document.getElementById("header")!;
+  const hamburger = document.getElementById("hamburger")!;
+  const nav = document.getElementById("nav")!;
+
+  window.addEventListener("scroll", () => {
+    header.classList.toggle("is-scrolled", window.scrollY > 50);
+  });
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("is-active");
+    nav.classList.toggle("is-open");
+    document.body.style.overflow = nav.classList.contains("is-open")
+      ? "hidden"
+      : "";
+  });
+
+  nav.querySelectorAll(".nav-link").forEach((link) => {
+    link.addEventListener("click", () => {
+      hamburger.classList.remove("is-active");
+      nav.classList.remove("is-open");
+      document.body.style.overflow = "";
+    });
+  });
+</script>

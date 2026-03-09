@@ -1,0 +1,114 @@
+<section class="company" id="company">
+  <div class="container">
+    <div class="company-header fade-in">
+      <span class="section-label" style="color: var(--color-accent);">About Us</span>
+      <h2 class="section-title-en" style="color: var(--color-white);">Company</h2>
+      <p class="section-title-ja" style="color: var(--color-text-light-gray);">会社概要</p>
+    </div>
+
+    <div class="company-body fade-in">
+      <table class="company-table">
+        <tbody>
+          <tr>
+            <th>会社名</th>
+            <td>株式会社good-eye</td>
+          </tr>
+          <tr>
+            <th>設立</th>
+            <td>2015年8月</td>
+          </tr>
+          <tr>
+            <th>代表取締役</th>
+            <td>目良慶太</td>
+          </tr>
+          <tr>
+            <th>所在地</th>
+            <td>〒150-0031 東京都渋谷区桜丘町29-26 2F</td>
+          </tr>
+          <tr>
+            <th>事業内容</th>
+            <td>
+              デジタルマーケティングコンサルティング<br />
+              新規事業開発支援<br />
+              飲食店運営（KAMERA / テンキ / RINN）<br />
+              OEM・商品開発 / イベント・ケータリング
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<style>
+  .company {
+    background: var(--color-bg-dark);
+    padding: var(--section-padding) 0;
+  }
+
+  .company-header {
+    margin-bottom: clamp(3rem, 6vw, 4rem);
+  }
+
+  .company-body {
+    max-width: 800px;
+  }
+
+  .company-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .company-table tr {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .company-table th,
+  .company-table td {
+    padding: 1.5rem 0;
+    text-align: left;
+    vertical-align: top;
+    font-weight: 300;
+  }
+
+  .company-table th {
+    width: 160px;
+    font-size: 0.8rem;
+    color: var(--color-text-light-gray);
+    letter-spacing: 0.1em;
+  }
+
+  .company-table td {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.9;
+  }
+
+  @media (max-width: 768px) {
+    .company-table th {
+      width: 100px;
+      font-size: 0.75rem;
+    }
+
+    .company-table td {
+      font-size: 0.8rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .company-table th,
+    .company-table td {
+      display: block;
+      width: 100%;
+    }
+
+    .company-table th {
+      padding-bottom: 0.3rem;
+    }
+
+    .company-table td {
+      padding-top: 0;
+      padding-bottom: 1.5rem;
+    }
+  }
+</style>

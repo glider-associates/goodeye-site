@@ -1,0 +1,124 @@
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-header fade-in">
+      <span class="section-label" style="color: var(--color-accent);">Philosophy</span>
+      <h2 class="section-title-en" style="color: var(--color-white);">Our Vision</h2>
+      <p class="section-title-ja" style="color: var(--color-text-light-gray);">私たちが目指すもの</p>
+    </div>
+
+    <div class="about-body">
+      <div class="about-message fade-in">
+        <p class="about-lead">
+          渋谷を代表する店をつくる。<br />
+          食と街を通じて、<br class="sp-only" />新しい景色をつくる。
+        </p>
+      </div>
+
+      <div class="about-values fade-in">
+        <div class="value-item">
+          <span class="value-number">01</span>
+          <h3 class="value-title">渋谷を代表する店をつくる</h3>
+          <p class="value-desc">
+            焼売×お茶ハイのネオ酒場、天ぷら×ナチュラルワインの隠れ家、ロティサリーチキン×クラフト焼酎——3つの個性で、記憶に残る飲食体験を。
+          </p>
+        </div>
+        <div class="value-item">
+          <span class="value-number">02</span>
+          <h3 class="value-title">カルチャーの創造</h3>
+          <p class="value-desc">
+            飲食店運営やイベントを通じて、街とともに育ち、根づく文化をつくります。
+          </p>
+        </div>
+        <div class="value-item">
+          <span class="value-number">03</span>
+          <h3 class="value-title">人が集まる場をつくる</h3>
+          <p class="value-desc">
+            お客様にとっても働く人にとっても、また来たいと思える場所であり続けることを大切にしています。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    background: var(--color-bg-dark);
+    padding: var(--section-padding) 0;
+  }
+
+  .about-header {
+    margin-bottom: clamp(3rem, 6vw, 5rem);
+  }
+
+  .about-body {
+    display: grid;
+    gap: clamp(3rem, 6vw, 5rem);
+  }
+
+  .about-message {
+    max-width: 700px;
+  }
+
+  .about-lead {
+    font-size: clamp(1rem, 1.8vw, 1.3rem);
+    font-weight: 300;
+    line-height: 2.2;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 0.06em;
+  }
+
+  .about-values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .value-item {
+    padding: 2.5rem 2rem;
+    border: 1px solid var(--color-border);
+    transition: border-color 0.4s ease;
+  }
+
+  .value-item:hover {
+    border-color: var(--color-accent);
+  }
+
+  .value-number {
+    font-family: var(--font-en);
+    font-size: 0.75rem;
+    color: var(--color-accent);
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+
+  .value-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-white);
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+  }
+
+  .value-desc {
+    font-size: 0.8rem;
+    line-height: 1.9;
+    color: var(--color-text-light-gray);
+    font-weight: 300;
+  }
+
+  .sp-only {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .about-values {
+      grid-template-columns: 1fr;
+    }
+
+    .sp-only {
+      display: inline;
+    }
+  }
+</style>

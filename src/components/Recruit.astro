@@ -1,0 +1,240 @@
+<section class="recruit" id="recruit">
+  <div class="recruit-hero">
+    <div class="recruit-hero-bg">
+      <img src="/images/restaurants/tenki/tenki-04.jpg" alt="" loading="lazy" />
+      <div class="recruit-hero-overlay"></div>
+    </div>
+    <div class="recruit-hero-content fade-in">
+      <span class="section-label" style="color: var(--color-accent-light);">Join Our Team</span>
+      <h2 class="recruit-heading">
+        カルチャーを<br />つくる仕事
+      </h2>
+      <p class="recruit-sub">
+        good-eyeは、ただの飲食店ではありません。
+      </p>
+    </div>
+  </div>
+
+  <div class="recruit-body">
+    <div class="container">
+      <div class="recruit-message fade-in">
+        <p class="recruit-lead">
+          飲食店運営やイベントを通じて、<br />
+          街とともに育ち、根づく文化をつくる。<br />
+          そんな挑戦を一緒にしてくれる仲間を募集しています。
+        </p>
+      </div>
+
+      <div class="recruit-features fade-in">
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">成長できる環境</h3>
+          <p class="feature-desc">
+            フレンチの技法から経営ノウハウまで、幅広いスキルを身につけられます。
+          </p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+              <path d="M16 3.13a4 4 0 010 7.75"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">チームワーク</h3>
+          <p class="feature-desc">
+            少数精鋭だからこそ、一人ひとりの声が届く組織です。
+          </p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M2 12h20"/>
+              <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">渋谷から世界へ</h3>
+          <p class="feature-desc">
+            デジタルと食の両面から新しい価値を発信します。
+          </p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+              <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">食への情熱</h3>
+          <p class="feature-desc">
+            情熱を持って取り組める仲間を待っています。
+          </p>
+        </div>
+      </div>
+
+      <div class="recruit-cta fade-in">
+        <p class="cta-text">まずはお店に飲みに来てください。</p>
+        <div class="cta-buttons">
+          <a href="/recruit" class="btn" style="color: var(--color-white);">
+            <span>採用情報を見る</span>
+            <span class="btn-arrow"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .recruit {
+    background: var(--color-bg-dark);
+  }
+
+  .recruit-hero {
+    position: relative;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .recruit-hero-bg {
+    position: absolute;
+    inset: 0;
+  }
+
+  .recruit-hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .recruit-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(10, 10, 10, 0.4) 0%,
+      rgba(10, 10, 10, 0.7) 100%
+    );
+  }
+
+  .recruit-hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: var(--color-white);
+  }
+
+  .recruit-heading {
+    font-family: var(--font-ja);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .recruit-sub {
+    font-size: clamp(0.85rem, 1.2vw, 1rem);
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    opacity: 0.8;
+  }
+
+  .recruit-body {
+    padding: var(--section-padding) 0;
+  }
+
+  .recruit-message {
+    text-align: center;
+    margin-bottom: clamp(3rem, 6vw, 5rem);
+  }
+
+  .recruit-lead {
+    font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+    line-height: 2.4;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 300;
+    letter-spacing: 0.08em;
+  }
+
+  .recruit-features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: clamp(4rem, 8vw, 6rem);
+  }
+
+  .feature-item {
+    padding: 2.5rem 2rem;
+    border: 1px solid var(--color-border);
+    text-align: center;
+    transition: all 0.4s var(--ease-out-expo);
+  }
+
+  .feature-item:hover {
+    border-color: var(--color-accent);
+    background: rgba(184, 150, 90, 0.05);
+  }
+
+  .feature-icon {
+    color: var(--color-accent);
+    margin-bottom: 1.5rem;
+  }
+
+  .feature-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-white);
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+  }
+
+  .feature-desc {
+    font-size: 0.78rem;
+    line-height: 1.9;
+    color: var(--color-text-light-gray);
+    font-weight: 300;
+  }
+
+  .recruit-cta {
+    text-align: center;
+  }
+
+  .cta-text {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 2rem;
+    letter-spacing: 0.08em;
+    font-weight: 300;
+  }
+
+  @media (max-width: 768px) {
+    .recruit-hero {
+      height: 50vh;
+    }
+
+    .recruit-features {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .recruit-features {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

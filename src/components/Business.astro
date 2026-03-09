@@ -1,0 +1,269 @@
+<section class="business" id="business">
+  <div class="container">
+    <div class="business-header fade-in">
+      <span class="section-label" style="color: var(--color-accent);">What We Do</span>
+      <h2 class="section-title-en">Our Business</h2>
+      <p class="section-title-ja">事業内容</p>
+    </div>
+
+    <!-- 飲食事業（メイン） -->
+    <div class="business-main fade-in">
+      <div class="main-image">
+        <img src="/images/restaurants/rinn/rinn-01.jpg" alt="Restaurant Business" loading="lazy" />
+        <div class="main-image-overlay"></div>
+      </div>
+      <div class="main-content">
+        <span class="main-label">Restaurant Business</span>
+        <h3 class="main-title">飲食事業</h3>
+        <p class="main-lead">
+          「渋谷を代表する店をつくる」をミッションに、<br />
+          個性の異なる3店舗を運営。<br />
+          それぞれの強みを活かした飲食体験を提供しています。
+        </p>
+        <div class="main-services">
+          <div class="main-service-item">
+            <span class="main-service-num">01</span>
+            <div>
+              <h4 class="main-service-title">KAMERA — 焼売×お茶ハイ</h4>
+              <p class="main-service-desc">渋谷・百軒店のネオ酒場。フレンチの熟成技法で仕上げた無添加焼売と、中国茶の専門家が監修した10種以上のお茶ハイを立ち飲みカウンターで。</p>
+            </div>
+          </div>
+          <div class="main-service-item">
+            <span class="main-service-num">02</span>
+            <div>
+              <h4 class="main-service-title">テンキ — 天ぷら×白ワイン</h4>
+              <p class="main-service-desc">渋谷・桜丘町の隠れ家。フレンチの技法で仕上げる創作天ぷらと約300種のナチュラルワイン。看板のないビストロ空間で上質なひとときを。</p>
+            </div>
+          </div>
+          <div class="main-service-item">
+            <span class="main-service-num">03</span>
+            <div>
+              <h4 class="main-service-title">RINN — ロティサリーチキン×クラフト焼酎</h4>
+              <p class="main-service-desc">渋谷・神泉の新店。フランス製マシンで焼き上げるチキンと全国50種以上のクラフト焼酎。火を囲んで人が集まる場所。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- コンサルティング事業（サブ） -->
+    <div class="business-sub fade-in">
+      <div class="sub-inner">
+        <div class="sub-content">
+          <span class="sub-label">Consulting Business</span>
+          <h3 class="sub-title">コンサルティング事業</h3>
+          <p class="sub-desc">
+            デジタル/SNSマーケティングの支援、新規事業開発の支援を行っています。マーケティングで培った知見を飲食店運営にも活かし、両軸の相乗効果によって新たな価値の創出を目指します。
+          </p>
+        </div>
+        <div class="sub-tags">
+          <span class="sub-tag">デジタル / SNSマーケティング</span>
+          <span class="sub-tag">新規事業開発</span>
+          <span class="sub-tag">コンテンツ制作</span>
+          <span class="sub-tag">アカウント運用支援</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .business {
+    background: var(--color-bg-light);
+    padding: var(--section-padding) 0;
+  }
+
+  .business-header {
+    margin-bottom: clamp(3rem, 6vw, 5rem);
+  }
+
+  .section-title-en {
+    color: var(--color-text-dark);
+  }
+
+  /* 飲食メイン */
+  .business-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+    background: var(--color-white);
+    overflow: hidden;
+  }
+
+  .main-image {
+    position: relative;
+    min-height: 500px;
+    overflow: hidden;
+  }
+
+  .main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s var(--ease-out-expo);
+  }
+
+  .business-main:hover .main-image img {
+    transform: scale(1.04);
+  }
+
+  .main-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), transparent);
+  }
+
+  .main-content {
+    padding: clamp(2rem, 4vw, 3.5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .main-label {
+    font-family: var(--font-en);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 0.6rem;
+  }
+
+  .main-title {
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    font-weight: 500;
+    color: var(--color-text-dark);
+    letter-spacing: 0.06em;
+    margin-bottom: 1.5rem;
+  }
+
+  .main-lead {
+    font-size: 0.85rem;
+    line-height: 2.2;
+    color: var(--color-text-gray);
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+
+  .main-services {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .main-service-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--color-border-dark);
+  }
+
+  .main-service-item:last-child {
+    border-bottom: none;
+  }
+
+  .main-service-num {
+    font-family: var(--font-en);
+    font-size: 0.65rem;
+    color: var(--color-accent);
+    letter-spacing: 0.1em;
+    flex-shrink: 0;
+    padding-top: 2px;
+  }
+
+  .main-service-title {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-text-dark);
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.03em;
+  }
+
+  .main-service-desc {
+    font-size: 0.78rem;
+    line-height: 1.8;
+    color: var(--color-text-gray);
+    font-weight: 300;
+  }
+
+  /* コンサルサブ */
+  .business-sub {
+    background: var(--color-white);
+    overflow: hidden;
+  }
+
+  .sub-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: clamp(1.5rem, 3vw, 2.5rem) clamp(2rem, 4vw, 3.5rem);
+  }
+
+  .sub-label {
+    font-family: var(--font-en);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-text-light-gray);
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+
+  .sub-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-text-dark);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.8rem;
+  }
+
+  .sub-desc {
+    font-size: 0.78rem;
+    line-height: 1.9;
+    color: var(--color-text-gray);
+    font-weight: 300;
+    max-width: 500px;
+  }
+
+  .sub-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  .sub-tag {
+    font-size: 0.68rem;
+    padding: 5px 12px;
+    border: 1px solid var(--color-border-dark);
+    color: var(--color-text-gray);
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 768px) {
+    .business-main {
+      grid-template-columns: 1fr;
+    }
+
+    .main-image {
+      min-height: 250px;
+    }
+
+    .main-content {
+      padding: 1.5rem;
+    }
+
+    .main-lead br {
+      display: none;
+    }
+
+    .sub-inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>
