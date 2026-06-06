@@ -2,11 +2,17 @@
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
+
+const atmosphereImages = Array.from(
+  { length: 7 },
+  (_, i) =>
+    `/images/restaurants/kamera/atmosphere/atmosphere-${String(i + 1).padStart(2, "0")}.jpg`,
+);
 ---
 
 <Layout
-  title="KAMERA | 焼売×お茶ハイ 渋谷・百軒店のネオ酒場 | good-eye"
-  description="渋谷・百軒店の焼売×お茶ハイ専門ネオ酒場KAMERA。フレンチの熟成技法で仕上げた無添加焼売と、中国茶の専門家が監修したお茶ハイを立ち飲みカウンターで。"
+  title="KAMERA | 焼売×ウーロン茶ハイ 渋谷・百軒店のネオ酒場 | good-eye"
+  description="渋谷・百軒店の焼売×ウーロン茶ハイ専門ネオ酒場KAMERA。フレンチの熟成技法で仕上げた無添加焼売と、中国茶の専門家が監修したウーロン茶ハイを立ち飲みカウンターで。"
 >
   <Header />
 
@@ -15,10 +21,10 @@ import Footer from "../../components/Footer.astro";
     <section class="k-hero">
       <div class="k-hero-images">
         <div class="k-hero-main">
-          <img src="/images/restaurants/kamera/kamera-01.jpg" alt="KAMERA" />
+          <img src={atmosphereImages[3]} alt="KAMERA" />
         </div>
         <div class="k-hero-sub">
-          <img src="/images/restaurants/kamera/kamera-05.jpg" alt="KAMERA" />
+          <img src={atmosphereImages[5]} alt="KAMERA" />
         </div>
       </div>
       <div class="k-hero-overlay"></div>
@@ -26,7 +32,7 @@ import Footer from "../../components/Footer.astro";
         <div class="k-hero-logo">
           <img src="/images/logos/kamera/kamera-logo.png" alt="KAMERA" />
         </div>
-        <p class="k-hero-tagline">焼売とお茶ハイのネオ酒場</p>
+        <p class="k-hero-tagline">焼売とウーロン茶ハイ</p>
         <div class="k-hero-scroll">
           <span class="k-hero-scroll-text">Scroll</span>
           <span class="k-hero-scroll-line"></span>
@@ -41,15 +47,14 @@ import Footer from "../../components/Footer.astro";
           <div class="k-concept-text">
             <span class="section-label" style="color: var(--color-accent);">Concept</span>
             <h2 class="k-concept-heading">
-              百軒店の青い灯のもと、<br />
-              一杯目はここから。
+              渋谷の夜はここから始まる
             </h2>
             <p class="k-concept-desc">
-              渋谷・百軒店の一角、青いネオンサインが目印のKAMERA。フレンチの熟成技法で仕上げた無添加の焼売と、中国茶の専門家が監修したお茶ハイを、立ち飲みカウンターで楽しむネオ酒場です。カジュアルに、でもクオリティは妥協しない。ふらっと立ち寄れる、街に馴染んだ一杯目の店。
+              渋谷・百軒店のKAMERAは、熟成焼売とこだわりのお茶ハイが自慢の酒場です。フレンチの技法を駆使した蒸したての焼売に加え、炒め物や麺類も揃え、軽く一杯にも、1軒目からしっかり食事を楽しみたい夜にもフィットします。<br>
             </p>
           </div>
           <div class="k-concept-img">
-            <img src="/images/restaurants/kamera/kamera-08.jpg" alt="" loading="lazy" />
+            <img src={atmosphereImages[4]} alt="" loading="lazy" />
           </div>
         </div>
       </div>
@@ -68,19 +73,18 @@ import Footer from "../../components/Footer.astro";
           <!-- 焼売 -->
           <div class="k-menu-card fade-in">
             <div class="k-menu-card-img">
-              <img src="/images/restaurants/kamera/kamera-06.jpg" alt="焼売" loading="lazy" />
+              <img src={atmosphereImages[1]} alt="焼売" loading="lazy" />
             </div>
             <div class="k-menu-card-body">
               <span class="k-menu-card-label">Shumai</span>
               <h3 class="k-menu-card-title">熟成焼売</h3>
               <p class="k-menu-card-desc">
-                化学調味料を使わず、フレンチの熟成技法で旨味を引き出した無添加焼売。山形豚の熟成焼売、子羊と黒米の熟成焼売、蟹といくらの焼売など、素材ごとの個性を最大限に活かした5種のラインナップ。
+                化学調味料を使わず、フレンチの熟成技法で旨味を引き出した無添加焼売。山形豚の熟成焼売、仔羊と黒米の熟成焼売など、素材ごとの個性を最大限に活かした焼売がウリです。
               </p>
               <div class="k-menu-items">
                 <span class="k-menu-item">山形豚の熟成焼売</span>
                 <span class="k-menu-item">子羊と黒米の熟成焼売</span>
-                <span class="k-menu-item">蟹といくらの焼売</span>
-                <span class="k-menu-item">水焼売</span>
+                <span class="k-menu-item">海老の水焼売</span>
               </div>
             </div>
           </div>
@@ -88,13 +92,13 @@ import Footer from "../../components/Footer.astro";
           <!-- お茶ハイ -->
           <div class="k-menu-card fade-in">
             <div class="k-menu-card-img">
-              <img src="/images/restaurants/kamera/kamera-07.jpg" alt="お茶ハイ" loading="lazy" />
+              <img src={atmosphereImages[2]} alt="お茶ハイ" loading="lazy" />
             </div>
             <div class="k-menu-card-body">
-              <span class="k-menu-card-label">Tea-Hai</span>
-              <h3 class="k-menu-card-title">お茶ハイ</h3>
+              <span class="k-menu-card-label">WulongTea-Hai</span>
+              <h3 class="k-menu-card-title">ウーロン茶ハイ</h3>
               <p class="k-menu-card-desc">
-                中国茶の専門家が茶葉選定から淹れ方まで監修。福岡の麦焼酎蔵で造ったオリジナル焼酎をベースに、3種の定番ウーロンハイと季節のお茶ハイを合わせた10種以上のラインナップ。
+                ウーロン茶ハイには、中国政府認定の一級資格「高級評茶師」が厳選した茶葉を使用。合わせる焼酎も、日本唯一の「ウーロン茶ハイ専用麦焼酎」を福岡の酒蔵に製造を依頼しています。こだわり抜いた一杯を、特製うすはりグラスでどうぞ。
               </p>
               <div class="k-menu-items">
                 <span class="k-menu-item">四季春</span>
@@ -114,28 +118,22 @@ import Footer from "../../components/Footer.astro";
         <div class="container">
           <span class="section-label" style="color: var(--color-accent);">Gallery</span>
           <h2 class="section-title-en" style="color: var(--color-text-dark);">Atmosphere</h2>
-          <p class="section-title-ja">店内の雰囲気</p>
+          <p class="section-title-ja">KAMERAの空間</p>
         </div>
       </div>
       <div class="k-gallery-grid fade-in">
-        <div class="k-gallery-item k-gallery-wide">
-          <img src="/images/restaurants/kamera/kamera-09.jpg" alt="" loading="lazy" />
-        </div>
-        <div class="k-gallery-item">
-          <img src="/images/restaurants/kamera/kamera-10.jpg" alt="" loading="lazy" />
-        </div>
-        <div class="k-gallery-item">
-          <img src="/images/restaurants/kamera/kamera-03.jpg" alt="" loading="lazy" />
-        </div>
-        <div class="k-gallery-item k-gallery-wide">
-          <img src="/images/restaurants/kamera/kamera-11.jpg" alt="" loading="lazy" />
-        </div>
-        <div class="k-gallery-item">
-          <img src="/images/restaurants/kamera/kamera-02.jpg" alt="" loading="lazy" />
-        </div>
-        <div class="k-gallery-item">
-          <img src="/images/restaurants/kamera/kamera-04.jpg" alt="" loading="lazy" />
-        </div>
+        {
+          atmosphereImages.map((src, index) => (
+            <div
+              class:list={[
+                "k-gallery-item",
+                { "k-gallery-wide": index === 0 || index === 3 || index === 6 },
+              ]}
+            >
+              <img src={src} alt="" loading="lazy" />
+            </div>
+          ))
+        }
       </div>
     </section>
 
@@ -202,8 +200,8 @@ import Footer from "../../components/Footer.astro";
     <section class="k-section k-others">
       <div class="container">
         <div class="k-section-header fade-in">
-          <span class="section-label" style="color: var(--color-accent);">Other Restaurants</span>
-          <h2 class="section-title-en" style="color: var(--color-white);">Our Restaurants</h2>
+          <span class="section-label" style="color: var(--color-accent);">Other Brands</span>
+          <h2 class="section-title-en" style="color: var(--color-white);">Our Brands</h2>
         </div>
 
         <div class="k-others-grid">
@@ -235,7 +233,7 @@ import Footer from "../../components/Footer.astro";
     <!-- ========== CTA ========== -->
     <section class="k-section k-cta">
       <div class="k-cta-bg">
-        <img src="/images/restaurants/kamera/kamera-04.jpg" alt="" loading="lazy" />
+        <img src={atmosphereImages[6]} alt="" loading="lazy" />
         <div class="k-cta-overlay"></div>
       </div>
       <div class="container">
