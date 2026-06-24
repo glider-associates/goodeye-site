@@ -4,7 +4,7 @@ import RestaurantDetailPage from "../../components/RestaurantDetailPage.astro";
 const atmosphereImages = Array.from(
   { length: 5 },
   (_, i) =>
-    `/images/restaurants/rinn/atmosphere/atmosphere-${String(i + 1).padStart(2, "0")}.jpg`,
+    `/images/restaurants/rinn/atmosphere/atmosphere-${String(i + 1).padStart(2, "0")}.webp`,
 );
 ---
 
@@ -13,7 +13,7 @@ const atmosphereImages = Array.from(
   metaDescription="渋谷・円山町のRINN（リン）。フランス製ロティサリーマシンで焼き上げるチキンと、50種以上のクラフト焼酎。デートや会食、貸切まで対応するダイニングシアター。"
   brandName="RINN"
   tagline="ロティサリーと焼酎"
-  logo="/images/logos/rinn/rinn-logo-white.png"
+  logo="/images/logos/rinn/rinn-logo-white.webp"
   logoInvert={false}
   logoVertical={false}
   atmosphereImages={atmosphereImages}
@@ -55,13 +55,13 @@ const atmosphereImages = Array.from(
       href: "/restaurants/kamera",
       name: "KAMERA",
       desc: "焼売×ウーロン茶ハイ",
-      image: "/images/restaurants/kamera/kamera-01.jpg",
+      image: "/images/restaurants/kamera/kamera-01.webp",
     },
     {
       href: "/restaurants/tenki",
       name: "テンキ",
       desc: "天ぷら×ワイン",
-      image: "/images/restaurants/tenki/tenki-01.jpg",
+      image: "/images/restaurants/tenki/tenki-01.webp",
     },
   ]}
   ctaText="RINNで一緒に働きませんか？"

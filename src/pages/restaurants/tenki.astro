@@ -4,7 +4,7 @@ import RestaurantDetailPage from "../../components/RestaurantDetailPage.astro";
 const atmosphereImages = Array.from(
   { length: 7 },
   (_, i) =>
-    `/images/restaurants/tenki/atmosphere/atmosphere-${String(i + 1).padStart(2, "0")}.jpg`,
+    `/images/restaurants/tenki/atmosphere/atmosphere-${String(i + 1).padStart(2, "0")}.webp`,
 );
 ---
 
@@ -13,7 +13,7 @@ const atmosphereImages = Array.from(
   metaDescription="渋谷・桜丘町の天ぷらとワインの専門店「テンキ」。フランス料理×天ぷらの創作料理と、約300本のワインを一枚板カウンターで。神泉駅徒歩約7分、渋谷駅徒歩約10分。"
   brandName="テンキ"
   tagline="天ぷらとワイン"
-  logo="/images/logos/tenki/tenki-logo.png"
+  logo="/images/logos/tenki/tenki-logo.webp"
   logoInvert={true}
   logoVertical={true}
   atmosphereImages={atmosphereImages}
@@ -55,13 +55,13 @@ const atmosphereImages = Array.from(
       href: "/restaurants/kamera",
       name: "KAMERA",
       desc: "焼売×ウーロン茶ハイ",
-      image: "/images/restaurants/kamera/kamera-01.jpg",
+      image: "/images/restaurants/kamera/kamera-01.webp",
     },
     {
       href: "/restaurants/rinn",
       name: "RINN",
       desc: "ロティサリーチキン×クラフト焼酎",
-      image: "/images/restaurants/rinn/rinn-01.jpg",
+      image: "/images/restaurants/rinn/rinn-01.webp",
     },
   ]}
   ctaText="テンキで一緒に働きませんか？"
