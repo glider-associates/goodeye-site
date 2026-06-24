@@ -2,6 +2,7 @@
 const restaurants = [
   {
     name: "KAMERA",
+    slug: "kamera",
     nameJa: "カメラ",
     desc: "渋谷・百軒店の焼売×お茶ハイ専門ネオ酒場。山形豚の熟成焼売や子羊と黒米の焼売など、フレンチの熟成技法で仕上げた無添加の焼売と、中国茶の専門家が監修した10種以上のお茶ハイを、青いネオンが灯る立ち飲みカウンターで。",
     images: [
@@ -16,20 +17,27 @@ const restaurants = [
   },
   {
     name: "テンキ",
+    slug: "tenki",
     nameJa: "tenki",
-    desc: "渋谷・桜丘町の隠れ家で味わう、天ぷらと白ワインのマリアージュ。ビブグルマン経歴のシェフがフレンチの技法で仕上げる創作天ぷらと、約300種のナチュラルワイン。大谷石とヨーロピアンスタイルが融合した、看板のないビストロ空間。",
+    desc: "渋谷・桜丘町の天ぷらとワインの専門店。フランス料理×天ぷらの創作料理と、約300本のワインを大谷石の一枚板カウンターで。看板のない隠れ家ビストロ。",
     images: [
       "/images/restaurants/tenki/tenki-01.jpg",
       "/images/restaurants/tenki/tenki-02.jpg",
       "/images/restaurants/tenki/tenki-03.jpg",
     ],
-    logo: "/images/logos/tenki/tenki-mark.png",
-    logoStyle: "circle",
+    imageFocus: [
+      { position: "38% 84%", scale: 1.35 },
+      { position: "center 28%" },
+      { position: "center center", fit: "contain" },
+    ],
+    logo: "/images/logos/tenki/tenki-logo.png",
+    logoStyle: "invert-vertical",
     instagram: "https://www.instagram.com/tenki_shibuya/",
-    page: "",
+    page: "/restaurants/tenki",
   },
   {
     name: "RINN",
+    slug: "rinn",
     nameJa: "リン",
     desc: "輪・音・回転・年輪——ロティサリーが回る\u201C輪\u201D、火を囲む\u201C輪\u201D、積み重なる\u201C年輪\u201D。フランス製マシンで焼き上げるロティサリーチキンと、選び抜いた50種以上のクラフト焼酎。渋谷・円山町で、食と会話が重なり合うダイニングシアターのような居酒屋。",
     images: [
@@ -37,10 +45,15 @@ const restaurants = [
       "/images/restaurants/rinn/rinn-02.jpg",
       "/images/restaurants/rinn/rinn-03.jpg",
     ],
+    imageFocus: [
+      { position: "42% center", scale: 1.18 },
+      { position: "center 34%" },
+      { position: "center center", fit: "contain" },
+    ],
     logo: "/images/logos/rinn/rinn-logo-white.png",
-    logoStyle: "invert",
+    logoStyle: "white",
     instagram: "https://www.instagram.com/rinn__shibuya/",
-    page: "",
+    page: "/restaurants/rinn",
   },
 ];
 ---
@@ -56,26 +69,72 @@ const restaurants = [
 
   {
     restaurants.map((restaurant, index) => (
-      <div class={`restaurant-item ${index % 2 !== 0 ? "reverse" : ""}`}>
+      <div class={`restaurant-item ${index % 2 !== 0 ? "reverse" : ""} restaurant-item--${restaurant.slug}`}>
         <div class="restaurant-images fade-in">
           <div class="image-main">
-            <img src={restaurant.images[0]} alt={restaurant.name} loading="lazy" />
+            <img
+              src={restaurant.images[0]}
+              alt={restaurant.name}
+              loading="lazy"
+              class:list={[
+                restaurant.imageFocus?.[0]?.fit === "contain" && "image-fit-contain",
+              ]}
+              style={[
+                restaurant.imageFocus?.[0]?.position &&
+                  `object-position: ${restaurant.imageFocus[0].position}`,
+                restaurant.imageFocus?.[0]?.scale &&
+                  `--img-scale: ${restaurant.imageFocus[0].scale}`,
+                restaurant.imageFocus?.[0]?.scale &&
+                  restaurant.imageFocus?.[0]?.position &&
+                  `--img-origin: ${restaurant.imageFocus[0].position}`,
+              ]
+                .filter(Boolean)
+                .join("; ")}
+            />
           </div>
           <div class="image-sub-grid">
             <div class="image-sub">
-              <img src={restaurant.images[1]} alt={restaurant.name} loading="lazy" />
+              <img
+                src={restaurant.images[1]}
+                alt={restaurant.name}
+                loading="lazy"
+                class:list={[
+                  restaurant.imageFocus?.[1]?.fit === "contain" && "image-fit-contain",
+                ]}
+              style={[
+                restaurant.imageFocus?.[1]?.position &&
+                  `object-position: ${restaurant.imageFocus[1].position}`,
+                restaurant.imageFocus?.[1]?.scale &&
+                  `--img-scale: ${restaurant.imageFocus[1].scale}`,
+                restaurant.imageFocus?.[1]?.scale &&
+                  restaurant.imageFocus?.[1]?.position &&
+                  `--img-origin: ${restaurant.imageFocus[1].position}`,
+              ]
+                .filter(Boolean)
+                .join("; ")}
+              />
             </div>
             <div class="image-sub">
-              <img src={restaurant.images[2]} alt={restaurant.name} loading="lazy" />
+              <img
+                src={restaurant.images[2]}
+                alt={restaurant.name}
+                loading="lazy"
+                class:list={[
+                  restaurant.imageFocus?.[2]?.fit === "contain" && "image-fit-contain",
+                ]}
+                style={restaurant.imageFocus?.[2]?.position
+                  ? `object-position: ${restaurant.imageFocus[2].position}`
+                  : undefined}
+              />
             </div>
           </div>
         </div>
 
         <div class="restaurant-info fade-in">
-          <div class={`restaurant-logo ${restaurant.logoStyle === "circle" ? "logo-circle" : "logo-invert"}`}>
+          <div class={`restaurant-logo logo-${restaurant.logoStyle}`}>
             <img src={restaurant.logo} alt={restaurant.name} />
           </div>
-          <h3 class="restaurant-name">{restaurant.name}</h3>
+          {/* <h3 class="restaurant-name">{restaurant.name}</h3> */}
           {/* <p class="restaurant-desc">{restaurant.desc}</p> */}
           <div class="restaurant-links">
             <a href={restaurant.instagram} target="_blank" rel="noopener" class="restaurant-link">
@@ -114,11 +173,15 @@ const restaurants = [
     grid-template-columns: 1.2fr 1fr;
     gap: 0;
     min-height: 80vh;
-    align-items: center;
+    align-items: stretch;
+  }
+
+  .restaurant-item + .restaurant-item {
+    margin-top: clamp(3rem, 6vh, 5rem);
   }
 
   .restaurant-item.reverse {
-    grid-template-columns: 1fr 1.2fr;
+    grid-template-columns: 0.95fr 1.25fr;
   }
 
   .restaurant-item.reverse .restaurant-images {
@@ -168,11 +231,62 @@ const restaurants = [
     object-fit: cover;
   }
 
+  @media (min-width: 769px) {
+    .restaurant-item--tenki,
+    .restaurant-item--rinn {
+      min-height: 92vh;
+    }
+
+    .restaurant-item--tenki .restaurant-images,
+    .restaurant-item--rinn .restaurant-images {
+      grid-template-columns: 1.4fr 1fr;
+      height: 88vh;
+      min-height: 640px;
+    }
+
+    .restaurant-item--tenki .image-sub-grid,
+    .restaurant-item--rinn .image-sub-grid {
+      grid-template-rows: 0.88fr 1.12fr;
+    }
+
+    .restaurant-item--tenki .image-main img,
+    .restaurant-item--rinn .image-main img,
+    .restaurant-item--tenki .image-sub img,
+    .restaurant-item--rinn .image-sub img {
+      object-fit: cover;
+    }
+
+    .restaurant-item--tenki .image-main img,
+    .restaurant-item--rinn .image-main img {
+      transform: scale(var(--img-scale, 1));
+      transform-origin: var(--img-origin, center center);
+    }
+
+    .restaurant-item--tenki .image-sub img:not(.image-fit-contain),
+    .restaurant-item--rinn .image-sub img:not(.image-fit-contain) {
+      transform: scale(var(--img-scale, 1));
+      transform-origin: var(--img-origin, center center);
+    }
+
+    .restaurant-item--tenki:hover .image-main img,
+    .restaurant-item--rinn:hover .image-main img {
+      transform: scale(calc(var(--img-scale, 1) * 1.03));
+    }
+
+    .restaurant-item--tenki .image-fit-contain,
+    .restaurant-item--rinn .image-fit-contain {
+      object-fit: contain;
+      background: #141414;
+      transform: none;
+    }
+  }
+
   .restaurant-info {
     padding: clamp(2rem, 5vw, 5rem);
     display: flex;
     flex-direction: column;
     justify-content: center;
+    min-height: 100%;
   }
 
   .restaurant-logo {
@@ -184,6 +298,21 @@ const restaurants = [
     width: auto;
     object-fit: contain;
     filter: brightness(0) invert(1);
+    opacity: 0.9;
+  }
+
+  .restaurant-logo.logo-invert-vertical img {
+    height: clamp(80px, 12vw, 120px);
+    width: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+  }
+
+  .restaurant-logo.logo-white img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
     opacity: 0.9;
   }
 
@@ -281,24 +410,35 @@ const restaurants = [
   @media (max-width: 768px) {
     .restaurant-item,
     .restaurant-item.reverse {
+      display: flex;
+      flex-direction: column;
       grid-template-columns: 1fr;
       min-height: auto;
     }
 
-    .restaurant-item.reverse .restaurant-images {
-      order: 0;
-    }
-
+    .restaurant-item.reverse .restaurant-images,
     .restaurant-item.reverse .restaurant-info {
-      order: 0;
-    }
-
-    .restaurant-images {
-      height: 50vh;
+      order: unset;
     }
 
     .restaurant-info {
-      padding: 2rem var(--container-padding);
+      display: contents;
+    }
+
+    .restaurant-logo {
+      order: -1;
+      margin-bottom: 0;
+      padding: 2rem var(--container-padding) 1rem;
+    }
+
+    .restaurant-images {
+      order: 0;
+      height: 50vh;
+    }
+
+    .restaurant-links {
+      order: 1;
+      padding: 1.5rem var(--container-padding) 2rem;
     }
   }
 </style>

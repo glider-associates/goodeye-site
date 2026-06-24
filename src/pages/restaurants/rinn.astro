@@ -1,0 +1,69 @@
+---
+import RestaurantDetailPage from "../../components/RestaurantDetailPage.astro";
+
+const atmosphereImages = Array.from(
+  { length: 5 },
+  (_, i) =>
+    `/images/restaurants/rinn/atmosphere/atmosphere-${String(i + 1).padStart(2, "0")}.jpg`,
+);
+---
+
+<RestaurantDetailPage
+  metaTitle="RINN | ロティサリーチキン×クラフト焼酎 渋谷・円山町 | good-eye"
+  metaDescription="渋谷・円山町のRINN（リン）。フランス製ロティサリーマシンで焼き上げるチキンと、50種以上のクラフト焼酎。デートや会食、貸切まで対応するダイニングシアター。"
+  brandName="RINN"
+  tagline="ロティサリーと焼酎"
+  logo="/images/logos/rinn/rinn-logo-white.png"
+  logoInvert={false}
+  logoVertical={false}
+  atmosphereImages={atmosphereImages}
+  galleryWideIndices={[0, 2, 4]}
+  galleryTitle="RINNの空間"
+  heroMainImage={atmosphereImages[3]}
+  heroSubImage={atmosphereImages[2]}
+  conceptHeading="ロティサリーと焼酎で乾杯"
+  conceptDesc="円山町に誕生したRINNは、フランス製ロティサリーマシンでじっくり焼き上げるチキンを名物に、全国から50種以上のクラフト焼酎を取り揃えた居酒屋。3〜4階をつなぐ吹き抜けが生む開放感のなか、前菜から〆までバランスよく楽しめる料理と、ロティサリーと焼酎のマリアージュをお届けします。"
+  conceptImage={atmosphereImages[0]}
+  menuCards={[
+    {
+      label: "Rotisserie",
+      title: "ロティサリーチキン",
+      desc: "Rotisol社のロティサリーマシンで焼き上げる名物チキンは、外は香ばしく中はジューシー。前菜から〆まで、チキンに合う一皿を揃え、食事としてもしっかり楽しめる構成です。",
+      items: ["ロティサリーチキン", "季節の前菜", "〆の一品"],
+      image: atmosphereImages[3],
+    },
+    {
+      label: "Shochu",
+      title: "クラフト焼酎",
+      desc: "芋・麦・米など、クラフト焼酎を50種以上ご用意。伝統銘柄から個性派まで揃え、料理やお好みに合わせてスタッフがおすすめをご提案します。",
+      items: ["芋焼酎", "麦焼酎", "泡盛・その他"],
+      image: atmosphereImages[4],
+    },
+  ]}
+  infoName="RINN（リン）"
+  infoAddress="〒150-0044<br />東京都渋谷区円山町4-6 QLINK渋谷神泉 3F"
+  infoAccess="渋谷駅 徒歩約6分 / 神泉駅 徒歩約3分"
+  infoHours="月〜土・祝 17:00〜24:00（L.O. 料理23:00）<br />日 17:00〜23:00（L.O. 料理22:00）"
+  infoHoliday="不定休"
+  infoPhone="03-6416-1224（予約 050-5597-6869）"
+  instagram="https://www.instagram.com/rinn__shibuya/"
+  instagramHandle="@rinn__shibuya"
+  tabelogUrl="https://tabelog.com/tokyo/A1303/A130301/13316117/"
+  mapEmbed="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1666281.4348505593!2d136.4215285024143!3d35.34432987571913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b14e1286bc3%3A0xbbc8a762fc95daef!2sRINN!5e0!3m2!1sja!2sjp!4v1782304311888!5m2!1sja!2sjp"
+  otherBrands={[
+    {
+      href: "/restaurants/kamera",
+      name: "KAMERA",
+      desc: "焼売×ウーロン茶ハイ",
+      image: "/images/restaurants/kamera/kamera-01.jpg",
+    },
+    {
+      href: "/restaurants/tenki",
+      name: "テンキ",
+      desc: "天ぷら×ワイン",
+      image: "/images/restaurants/tenki/tenki-01.jpg",
+    },
+  ]}
+  ctaText="RINNで一緒に働きませんか？"
+  ctaImage={atmosphereImages[1]}
+/>

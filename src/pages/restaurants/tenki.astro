@@ -1,0 +1,69 @@
+---
+import RestaurantDetailPage from "../../components/RestaurantDetailPage.astro";
+
+const atmosphereImages = Array.from(
+  { length: 7 },
+  (_, i) =>
+    `/images/restaurants/tenki/atmosphere/atmosphere-${String(i + 1).padStart(2, "0")}.jpg`,
+);
+---
+
+<RestaurantDetailPage
+  metaTitle="テンキ | 天ぷら×ワイン 渋谷・神泉の隠れ家ビストロ | good-eye"
+  metaDescription="渋谷・桜丘町の天ぷらとワインの専門店「テンキ」。フランス料理×天ぷらの創作料理と、約300本のワインを一枚板カウンターで。神泉駅徒歩約7分、渋谷駅徒歩約10分。"
+  brandName="テンキ"
+  tagline="天ぷらとワイン"
+  logo="/images/logos/tenki/tenki-logo.png"
+  logoInvert={true}
+  logoVertical={true}
+  atmosphereImages={atmosphereImages}
+  galleryWideIndices={[0, 3, 6]}
+  galleryTitle="テンキの空間"
+  heroMainImage={atmosphereImages[3]}
+  heroSubImage={atmosphereImages[0]}
+  conceptHeading="季節の天ぷらを、ワインと気軽に"
+  conceptDesc="渋谷の喧騒を少し離れた桜丘町に佇む、天ぷらとワインの専門店。舌だけでなく目でも楽しめる「フランス料理×天ぷら」を、大谷石の一枚板カウンターで。旬の食材に合わせて油・温度・衣を変え、揚げたての一皿をご提供します。おまかせコースはもちろん、アラカルトで好きな料理とワインを自由に楽しむ夜も、ふらっと寄れる大人の隠れ家としてお迎えします。"
+  conceptImage={atmosphereImages[4]}
+  menuCards={[
+    {
+      label: "Tempura",
+      title: "天ぷら",
+      desc: "シェフ亀谷がフレンチ・スパニッシュ・アジアの技法を融合させた、テンキ流の天ぷら。名物の海老の天ぷらをはじめ、旬の食材を食材ごとに最適な油・温度・衣で揚げ上げます。春のおまかせ8品（7,700円〜）や、牛フィレの天ぷらも楽しめるスペシャルコースもご用意しています。",
+      items: ["海老の天ぷら", "おまかせコース", "スペシャルコース"],
+      image: atmosphereImages[3],
+    },
+    {
+      label: "Wine",
+      title: "ワイン",
+      desc: "ソムリエ常駐の【テンキ】のワインセラーには、約300本の銘柄が並びます。なかでも、えび・ホタテといった魚介の天ぷらと相性の良い、白ワインに特化。顔ぶれは3か月毎に変わるので、時期によって様々な味わいに出会えます。オレンジワインをはじめ珍しくエッジの効いた品揃えは、こだわり派の方にもきっとご満足いただけるはず。ボトルのほか、気軽に味わえるグラスワインは10種類。お好みの一杯で乾杯をお楽しみください。",
+      items: ["白ワイン中心", "約300本", "グラス10種"],
+      image: atmosphereImages[6],
+    },
+  ]}
+  infoName="テンキ"
+  infoAddress="〒150-0031<br />東京都渋谷区桜丘町29-26 エクセレンスビルディング桜丘町 2F<br />（1F：焼き鳥かみむら／ポスト前の入口から2階）"
+  infoAccess="渋谷駅 徒歩約10分 / 神泉駅 徒歩約7分"
+  infoHours="月〜土 17:00〜24:00 / 日 17:00〜23:00<br />※混雑時は2時間制となる場合があります"
+  infoHoliday="不定休"
+  infoPhone="03-6427-0503（予約 050-5600-0542）"
+  instagram="https://www.instagram.com/tenki_shibuya/"
+  instagramHandle="@tenki_shibuya"
+  tabelogUrl="https://tabelog.com/tokyo/A1303/A130301/13280396/"
+  mapEmbed="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3241.9085781784092!2d139.698355!3d35.654624!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b59ae8b6b1f%3A0x7390f333033e2c7d!2z5aSp44G344KJ44Go55m944Ov44Kk44OzIOODhuODs-OCrSDmuIvosLc!5e0!3m2!1sja!2sus!4v1782303686797!5m2!1sja!2sus"
+  otherBrands={[
+    {
+      href: "/restaurants/kamera",
+      name: "KAMERA",
+      desc: "焼売×ウーロン茶ハイ",
+      image: "/images/restaurants/kamera/kamera-01.jpg",
+    },
+    {
+      href: "/restaurants/rinn",
+      name: "RINN",
+      desc: "ロティサリーチキン×クラフト焼酎",
+      image: "/images/restaurants/rinn/rinn-01.jpg",
+    },
+  ]}
+  ctaText="テンキで一緒に働きませんか？"
+  ctaImage={atmosphereImages[6]}
+/>
