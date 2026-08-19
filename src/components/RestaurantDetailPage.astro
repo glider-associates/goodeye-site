@@ -31,6 +31,7 @@ export interface Props {
   galleryTitle: string;
   heroMainImage: string;
   heroSubImage: string;
+  heroMainPosition?: string;
   conceptHeading: string;
   conceptDesc: string;
   conceptImage: string;
@@ -63,6 +64,7 @@ const {
   galleryTitle,
   heroMainImage,
   heroSubImage,
+  heroMainPosition,
   conceptHeading,
   conceptDesc,
   conceptImage,
@@ -92,7 +94,11 @@ const galleryWideSet = new Set(galleryWideIndices);
     <section class="k-hero">
       <div class="k-hero-images">
         <div class="k-hero-main">
-          <img src={heroMainImage} alt={brandName} />
+          <img
+            src={heroMainImage}
+            alt={brandName}
+            style={heroMainPosition ? `object-position: ${heroMainPosition}` : undefined}
+          />
         </div>
         <div class="k-hero-sub">
           <img src={heroSubImage} alt={brandName} />
@@ -362,12 +368,13 @@ const galleryWideSet = new Set(galleryWideIndices);
     margin-bottom: 1.5rem;
   }
 
-  .k-hero-logo--vertical img {
-    height: clamp(80px, 12vw, 120px);
+  .k-hero-logo--plain img {
+    height: clamp(110px, 16vw, 168px);
+    filter: none;
   }
 
-  .k-hero-logo--plain img {
-    filter: none;
+  .k-hero-logo--vertical img {
+    height: clamp(80px, 12vw, 120px);
   }
 
   .k-hero-tagline {

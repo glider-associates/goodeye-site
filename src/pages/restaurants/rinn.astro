@@ -2,45 +2,46 @@
 import RestaurantDetailPage from "../../components/RestaurantDetailPage.astro";
 
 const atmosphereImages = Array.from(
-  { length: 5 },
+  { length: 7 },
   (_, i) =>
     `/images/restaurants/rinn/atmosphere/atmosphere-${String(i + 1).padStart(2, "0")}.webp`,
 );
 ---
 
 <RestaurantDetailPage
-  metaTitle="RINN | ロティサリーチキン×クラフト焼酎 渋谷・円山町 | good-eye"
-  metaDescription="渋谷・円山町のRINN（リン）。フランス製ロティサリーマシンで焼き上げるチキンと、50種以上のクラフト焼酎。デートや会食、貸切まで対応するダイニングシアター。"
-  brandName="RINN"
-  tagline="ロティサリーと焼酎"
-  logo="/images/logos/rinn/rinn-logo-white.webp"
+  metaTitle="Bistro RINN | ビブグルマンシェフの本格ビストロ 渋谷・円山町 | good-eye"
+  metaDescription="渋谷・円山町のBistro RINN。ビブグルマン選出シェフらが手がける本格ビストロ。フランス製マシンで焼き上げる丸鶏と季節の料理を、厳選ワインとともに。"
+  brandName="Bistro RINN"
+  tagline="ビブグルマンシェフの本格ビストロ"
+  logo="/images/logos/rinn/bistro-rinn-logo-white.svg"
   logoInvert={false}
   logoVertical={false}
   atmosphereImages={atmosphereImages}
-  galleryWideIndices={[0, 2, 4]}
-  galleryTitle="RINNの空間"
-  heroMainImage={atmosphereImages[3]}
-  heroSubImage={atmosphereImages[2]}
-  conceptHeading="ロティサリーと焼酎で乾杯"
-  conceptDesc="円山町に誕生したRINNは、フランス製ロティサリーマシンでじっくり焼き上げるチキンを名物に、全国から50種以上のクラフト焼酎を取り揃えた居酒屋。3〜4階をつなぐ吹き抜けが生む開放感のなか、前菜から〆までバランスよく楽しめる料理と、ロティサリーと焼酎のマリアージュをお届けします。"
+  galleryWideIndices={[0, 3, 6]}
+  galleryTitle="Bistro RINNの空間"
+  heroMainImage={atmosphereImages[2]}
+  heroSubImage={atmosphereImages[3]}
+  heroMainPosition="58% center"
+  conceptHeading="ビブグルマンシェフの本格ビストロ"
+  conceptDesc="ビブグルマン選出シェフらが手がける円山町のビストロ。フランス製マシンで焼き上げる丸鶏と季節の料理を、厳選ワインとともに。ムーディーな吹き抜け空間で、デートや友人との食事をお楽しみください。"
   conceptImage={atmosphereImages[0]}
   menuCards={[
     {
-      label: "Rotisserie",
-      title: "ロティサリーチキン",
+      label: "Bistro",
+      title: "ビブグルマンシェフの本格ビストロ",
       desc: "Rotisol社のロティサリーマシンで焼き上げる名物チキンは、外は香ばしく中はジューシー。前菜から〆まで、チキンに合う一皿を揃え、食事としてもしっかり楽しめる構成です。",
-      items: ["ロティサリーチキン", "季節の前菜", "〆の一品"],
-      image: atmosphereImages[3],
+      items: ["ロティサリーチキン", "季節の料理", "厳選ワイン"],
+      image: "/images/restaurants/rinn/menu-01.webp",
     },
     {
-      label: "Shochu",
-      title: "クラフト焼酎",
-      desc: "芋・麦・米など、クラフト焼酎を50種以上ご用意。伝統銘柄から個性派まで揃え、料理やお好みに合わせてスタッフがおすすめをご提案します。",
-      items: ["芋焼酎", "麦焼酎", "泡盛・その他"],
-      image: atmosphereImages[4],
+      label: "Chefs",
+      title: "2人のシェフの共演",
+      desc: "姉妹店「KAMERA」「テンキ」を手掛け、ミシュランのビブグルマンにも選出された亀谷剛。そして、フランスの星付きレストランなどを経て、渋谷の人気店「CHOWCHOW」「PEZ」の運営会社で総料理長を務めた渡邉義則。フランス料理の確かな技術と経験を持つ２人がタッグを組み、手間を惜しまない丁寧な仕事で本格ビストロ料理をお届けします。",
+      items: ["亀谷剛", "渡邉義則", "本格ビストロ"],
+      image: "/images/restaurants/rinn/menu-02.webp",
     },
   ]}
-  infoName="RINN（リン）"
+  infoName="Bistro RINN"
   infoAddress="〒150-0044<br />東京都渋谷区円山町4-6 QLINK渋谷神泉 3F"
   infoAccess="渋谷駅 徒歩約6分 / 神泉駅 徒歩約3分"
   infoHours="月〜土・祝 17:00〜24:00（L.O. 料理23:00）<br />日 17:00〜23:00（L.O. 料理22:00）"
@@ -49,7 +50,7 @@ const atmosphereImages = Array.from(
   instagram="https://www.instagram.com/rinn__shibuya/"
   instagramHandle="@rinn__shibuya"
   tabelogUrl="https://tabelog.com/tokyo/A1303/A130301/13316117/"
-  mapEmbed="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1666281.4348505593!2d136.4215285024143!3d35.34432987571913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b14e1286bc3%3A0xbbc8a762fc95daef!2sRINN!5e0!3m2!1sja!2sjp!4v1782304311888!5m2!1sja!2sjp"
+  mapEmbed="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1100!2d139.6949!3d35.6563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b14e1286bc3%3A0xbbc8a762fc95daef!2sRINN!5e0!3m2!1sja!2sjp"
   otherBrands={[
     {
       href: "/restaurants/kamera",
@@ -64,6 +65,6 @@ const atmosphereImages = Array.from(
       image: "/images/restaurants/tenki/tenki-01.webp",
     },
   ]}
-  ctaText="RINNで一緒に働きませんか？"
+  ctaText="Bistro RINNで一緒に働きませんか？"
   ctaImage={atmosphereImages[1]}
 />

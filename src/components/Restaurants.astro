@@ -36,7 +36,7 @@ const restaurants = [
     page: "/restaurants/tenki",
   },
   {
-    name: "RINN",
+    name: "Bistro RINN",
     slug: "rinn",
     nameJa: "リン",
     desc: "輪・音・回転・年輪——ロティサリーが回る\u201C輪\u201D、火を囲む\u201C輪\u201D、積み重なる\u201C年輪\u201D。フランス製マシンで焼き上げるロティサリーチキンと、選び抜いた50種以上のクラフト焼酎。渋谷・円山町で、食と会話が重なり合うダイニングシアターのような居酒屋。",
@@ -46,11 +46,11 @@ const restaurants = [
       "/images/restaurants/rinn/rinn-03.webp",
     ],
     imageFocus: [
-      { position: "42% center", scale: 1.18 },
-      { position: "center 34%" },
-      { position: "center center", fit: "contain" },
+      { position: "center 42%" },
+      { position: "center 38%" },
+      { position: "center 48%", fit: "contain" },
     ],
-    logo: "/images/logos/rinn/rinn-logo-white.webp",
+    logo: "/images/logos/rinn/bistro-rinn-logo-white.svg",
     logoStyle: "white",
     instagram: "https://www.instagram.com/rinn__shibuya/",
     page: "/restaurants/rinn",
@@ -310,10 +310,10 @@ const restaurants = [
   }
 
   .restaurant-logo.logo-white img {
-    height: 40px;
+    height: clamp(110px, 16vw, 168px);
     width: auto;
     object-fit: contain;
-    opacity: 0.9;
+    opacity: 0.95;
   }
 
   .restaurant-logo.logo-circle img {
