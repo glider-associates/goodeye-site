@@ -18,40 +18,16 @@ import Footer from "../components/Footer.astro";
         <div class="r-hero-overlay"></div>
       </div>
 
-      <div class="r-hero-ticker">
-        <div class="ticker-track">
-          <span class="ticker-item">食と街で、新しい景色をつくる。</span>
-          <span class="ticker-sep">/</span>
-          <span class="ticker-item">Join good-eye</span>
-          <span class="ticker-sep">/</span>
-          <span class="ticker-item">カルチャーをつくる仕事</span>
-          <span class="ticker-sep">/</span>
-          <span class="ticker-item">食と街で、新しい景色をつくる。</span>
-          <span class="ticker-sep">/</span>
-          <span class="ticker-item">Join good-eye</span>
-          <span class="ticker-sep">/</span>
-          <span class="ticker-item">カルチャーをつくる仕事</span>
-          <span class="ticker-sep">/</span>
-          <span class="ticker-item">食と街で、新しい景色をつくる。</span>
-          <span class="ticker-sep">/</span>
-          <span class="ticker-item">Join good-eye</span>
-          <span class="ticker-sep">/</span>
-          <span class="ticker-item">カルチャーをつくる仕事</span>
-          <span class="ticker-sep">/</span>
-        </div>
-      </div>
-
       <div class="r-hero-content">
         <p class="r-hero-label">good-eye recruit</p>
         <h1 class="r-hero-heading">
-          カルチャーを<br />つくる仕事
+          街に根付く<br />カルチャーをつくる仕事
         </h1>
       </div>
 
       <nav class="r-hero-nav">
         <a href="#message">Message</a>
         <a href="#culture">Culture</a>
-        <a href="#people">People</a>
         <a href="#ceo-message">Top Message</a>
         <a href="#faq">FAQ</a>
         <a href="#positions">募集情報</a>
@@ -69,18 +45,25 @@ import Footer from "../components/Footer.astro";
         <div class="r-message-body fade-in">
           <div class="r-message-main">
             <p class="r-message-philosophy">
-              good-eyeが大切にしているのは、<br />
-              <strong>「食と街で、新しい景色をつくる」</strong>こと。
-            </p>
-
-            <p class="r-message-text">
-              私たちは渋谷という街を拠点に、フランス料理の技法を居酒屋業態に落とし込んだ独自の飲食店を運営しています。ただ料理を提供するだけではなく、その場所でしか生まれない体験、空気、カルチャーをつくることが私たちの仕事です。
+              good-eyeの飲食事業は、<br />
+              <strong>「渋谷を代表する店をつくりたい」</strong><br />
+              という想いから始まりました。
             </p>
             <p class="r-message-text">
-              デジタルマーケティングの知見と飲食業の実践知を掛け合わせ、両軸の相乗効果によって新たな価値を生み出す。既存の枠にとらわれず、街に根ざしながらも新しい景色を見せ続けること。それが good-eye のミッションです。
+              私たちは渋谷を拠点に、個性の異なる飲食店をつくってきました。<br />
+              業態やコンセプトは違っても、<br />
+              大切にしていることは変わりません。
             </p>
             <p class="r-message-text">
-              一緒にこの挑戦をしてくれる仲間を探しています。
+              料理、サービス、空間。<br />
+              細部まで妥協せず、その店にしかない価値をつくること。
+            </p>
+            <p class="r-message-text">
+              そして現在、good-eyeが掲げるビジョンは、<br />
+              <strong>「日本を代表するチーム」</strong>。<br />
+              一人ひとりが仕事に責任を持ち、<br />
+              チームでより大きな成果をつくる。<br />
+              それが、good-eyeです。
             </p>
           </div>
 
@@ -110,8 +93,17 @@ import Footer from "../components/Footer.astro";
         <div class="r-culture-visual-text">
           <span class="r-section-label" style="color: var(--color-accent-light);">Culture</span>
           <h2 class="r-culture-visual-heading">
-            「街」と「食」の<br />リアルプレイスで<br />活躍する
+            カルチャーをつくる仕事
           </h2>
+          <p class="r-culture-visual-sub">
+            店をつくる。人をつなぐ。<br />
+            そして、街のカルチャーをつくる。
+          </p>
+          <p class="r-culture-visual-lead">
+            飲食店運営やイベントを通じて、<br />
+            渋谷にまだない価値を生み出していく。<br />
+            そんな仕事を、一緒にしませんか。
+          </p>
         </div>
       </div>
 
@@ -157,7 +149,7 @@ import Footer from "../components/Footer.astro";
     </section>
 
     <!-- ========== PEOPLE ========== -->
-    <section class="r-section r-people" id="people">
+    <section class="r-section r-people" id="people" hidden>
       <!-- 装飾ヒーロー画像 -->
       <div class="r-people-visual">
         <img src="/images/recruit-hero.webp" alt="" loading="lazy" />
@@ -608,43 +600,6 @@ import Footer from "../components/Footer.astro";
     background: rgba(10, 10, 10, 0.55);
   }
 
-  .r-hero-ticker {
-    position: absolute;
-    bottom: 25%;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    z-index: 1;
-    pointer-events: none;
-  }
-
-  .ticker-track {
-    display: flex;
-    white-space: nowrap;
-    animation: ticker 25s linear infinite;
-  }
-
-  .ticker-item {
-    font-family: var(--font-ja);
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
-    font-weight: 300;
-    color: rgba(255, 255, 255, 0.15);
-    letter-spacing: 0.08em;
-    padding: 0 1rem;
-  }
-
-  .ticker-sep {
-    font-family: var(--font-en);
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
-    color: rgba(255, 255, 255, 0.08);
-    padding: 0 1rem;
-  }
-
-  @keyframes ticker {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-
   .r-hero-content {
     position: relative;
     z-index: 2;
@@ -769,7 +724,8 @@ import Footer from "../components/Footer.astro";
     letter-spacing: 0.05em;
   }
 
-  .r-message-philosophy strong {
+  .r-message-philosophy strong,
+  .r-message-text strong {
     color: var(--color-accent-light);
     font-weight: 500;
   }
@@ -863,6 +819,24 @@ import Footer from "../components/Footer.astro";
     letter-spacing: 0.06em;
     line-height: 1.6;
     margin-top: 0.5rem;
+  }
+
+  .r-culture-visual-sub {
+    font-size: clamp(0.9rem, 1.4vw, 1.1rem);
+    color: rgba(255, 255, 255, 0.88);
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    line-height: 1.9;
+    margin-top: 1.2rem;
+  }
+
+  .r-culture-visual-lead {
+    font-size: clamp(0.8rem, 1.1vw, 0.9rem);
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    line-height: 2;
+    margin-top: 1rem;
   }
 
   .r-culture-grid {
@@ -1419,10 +1393,7 @@ import Footer from "../components/Footer.astro";
   /* ===== RESPONSIVE ===== */
   @media (max-width: 768px) {
     .r-hero-nav {
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem 1.5rem;
-      padding: 0 1rem;
+      display: none;
     }
 
     .r-message-body {
@@ -1430,7 +1401,8 @@ import Footer from "../components/Footer.astro";
     }
 
     .r-culture-visual {
-      height: 50vh;
+      height: 70vh;
+      min-height: 480px;
     }
 
     .r-culture-item,

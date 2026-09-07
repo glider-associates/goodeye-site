@@ -9,32 +9,41 @@
     <div class="about-body">
       <div class="about-message fade-in">
         <p class="about-lead">
-          渋谷を代表する店をつくる。<br />
-          食と街を通じて、<br class="sp-only" />新しい景色をつくる。
-        </p>
+          日本を代表するチーム
       </div>
 
-      <div class="about-values fade-in">
-        <div class="value-item">
-          <span class="value-number">01</span>
-          <h3 class="value-title">渋谷を代表する店をつくる</h3>
-          <p class="value-desc">
-            焼売×お茶ハイのネオ酒場、天ぷら×ナチュラルワインの隠れ家、火を囲むダイニングシアター——3つの個性で、記憶に残る飲食体験を。
-          </p>
-        </div>
-        <div class="value-item">
-          <span class="value-number">02</span>
-          <h3 class="value-title">カルチャーの創造</h3>
-          <p class="value-desc">
-            飲食店運営やイベントを通じて、街とともに育ち、根づく文化をつくります。
-          </p>
-        </div>
-        <div class="value-item">
-          <span class="value-number">03</span>
-          <h3 class="value-title">人が集まる場をつくる</h3>
-          <p class="value-desc">
-            お客様にとっても働く人にとっても、また来たいと思える場所であり続けることを大切にしています。
-          </p>
+      <div class="about-values-block fade-in">
+        <p class="about-values-lead">そのために、私たちが大切にする3つの行動。</p>
+        <div class="about-values">
+          <div class="value-item">
+            <span class="value-number">01</span>
+            <h3 class="value-title">職人であれ</h3>
+            <p class="value-title-en">PROFESSIONAL</p>
+            <p class="value-desc">
+              自分の仕事に誇りを持つ。<br>
+              細部への執念と想像力で、<br>
+              顧客の期待を超えていく。
+            </p>
+          </div>
+          <div class="value-item">
+            <span class="value-number">02</span>
+            <h3 class="value-title">独創的であれ</h3>
+            <p class="value-title-en">UNIQUE</p>
+            <p class="value-desc">
+              奇抜さを競うのではない。<br>
+              課題を徹底的に掘り下げ、<br>
+              その先にしかない答えをつくる。
+            </p>
+          </div>
+          <div class="value-item">
+            <span class="value-number">03</span>
+            <h3 class="value-title">最短距離</h3>
+            <p class="value-title-en">SHORTEST WAY</p>
+            <p class="value-desc">
+              成果を妨げるものを削ぎ落とす。<br>
+              本質を捉え、決めたら一直線に進む。
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -68,6 +77,15 @@
     letter-spacing: 0.06em;
   }
 
+  .about-values-lead {
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    font-weight: 400;
+    line-height: 1.8;
+    color: var(--color-white);
+    letter-spacing: 0.08em;
+    margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+  }
+
   .about-values {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -86,7 +104,7 @@
 
   .value-number {
     font-family: var(--font-en);
-    font-size: 0.75rem;
+    font-size: clamp(1.15rem, 1.8vw, 1.4rem);
     color: var(--color-accent);
     letter-spacing: 0.1em;
     display: block;
@@ -97,8 +115,18 @@
     font-size: 0.95rem;
     font-weight: 500;
     color: var(--color-white);
-    margin-bottom: 1rem;
+    margin-bottom: 0.4rem;
     letter-spacing: 0.05em;
+  }
+
+  .value-title-en {
+    font-family: var(--font-en);
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 1.2rem;
   }
 
   .value-desc {
